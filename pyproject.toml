@@ -1,0 +1,21 @@
+[tool.pylint.messages_control]
+
+disable = [
+	"invalid-name",
+	"import-error",
+	"too-many-locals",
+	"too-many-arguments",
+	"no-member",
+	"unused-import",
+	"duplicate-code",
+	"no-name-in-module",
+	"ungrouped-imports"
+	]
+
+[tool.black]
+line-length = 88
+skip-string-normalization = true
+
+[tool.isort]
+multi_line_output = 3
+profile = "black"
