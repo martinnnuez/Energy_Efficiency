@@ -93,12 +93,6 @@ The following steps describe how to run the project. Detailed explanations of th
 **Deploy Model as a Web Service on Hugging Face** 
 * The model is deployed on Hugging Face Spaces
 * Model and artifacts are available for use in the following Hugging Face Space: [Energy Efficiency Model](https://huggingface.co/spaces/martinnnuez/Energy_Efficiency)
-* Note: The model version can be set manually in the `predict.py` script! 
-* A virtual environment using `Pipenv` is created containing the necessary packages for the app.
-* Activate the environment by `pipenv shell`
-* The `predict.py` file can be tested locally using `test_predict.py`. This gives the prediction of one specific input example.
-* The way this is implemented, the `predict.py` file depends on the tracking server running. As mentioned in the videos, ideally, this dependency should be removed. However, I wanted to try to automatically get the registered model without putting manually the run_id.
-* The Flask app can be tested locally by starting `gunicorn --bind=0.0.0.0:9696 predict:app` and then running `test_predict_flask.py` in another terminal. This should give the same result as `test-predict.py`
 
 **Code Quality**
 * I used linting for the code quality.
