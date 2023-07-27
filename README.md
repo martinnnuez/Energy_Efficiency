@@ -70,11 +70,11 @@ The following steps describe how to run the project. Detailed explanations of th
 * Starting the Server
     * Start the server for tracking and model registry: `mlflow server --backend-store-uri sqlite:///mlruns.db --default-artifact-root artifacts`
 * Training
-    * To run only training with experiment tracking and model registry, use `exp_tracking.py` and run it with: `python3 exp_tracking.py --input-data <path/to/input-data.csv> --output <path/to/output>` (and optional other parameters)
+    * To run only training with experiment tracking and model registry, use `experiment_tracking.py` and run it with: `python3 experiment_tracking.py --input-data <path/to/input-data.csv> --output <path/to/output>` (and optional other parameters)
 * Hyperparameter Tuning
     * Hyperparameter tuning is done via Optuna
-    * The number of trials for hyperparameter tuning can be changed using the parameter `n-trials`, with the default value set to 20, e.g., `python3 exp_tracking.py --n-trials 50`. For the final `prefect_deploy.py` file, you need to change it directly in the script.
-    * Model parameters for hyperparameter tuning can also be changed via the command line, e.g., `n-estimators`, `max-depth`, `gamma`, `eta`, etc., for `exp_tracking.py`. For the final script, they need to be changed in the script.
+    * The number of trials for hyperparameter tuning can be changed using the parameter `n-trials`, with the default value set to 20, e.g., `python3 experiment_tracking.py --n-trials 50`. For the final `prefect_deploy.py` file, you need to change it directly in the script.
+    * Model parameters for hyperparameter tuning can also be changed via the command line, e.g., `n-estimators`, `max-depth`, `gamma`, `eta`, etc., for `experiment_tracking.py`. For the final script, they need to be changed in the script.
 * Mlflow Experiment Tracking and Model Registry
     * Mlflow tracking server: sqlite database
     * Mlflow backend store: sqlite database
@@ -85,7 +85,7 @@ The following steps describe how to run the project. Detailed explanations of th
     * The `main` function is turned into a Prefect `flow`
     * The functions `read_data`, `normalize`, `onehot`, and `training` are turned into tasks
     * To use the Prefect UI, use `prefect orion start` and browse to `localhost:4200`
-    * To start a Prefect flow (without deployment), use the script `prefect_flow.py`. It is equivalent to `exp_tracking.py`, but includes a Prefect flow and tasks
+    * To start a Prefect flow (without deployment), use the script `prefect_flow.py`. It is equivalent to `experiment_tracking.py`, but includes a Prefect flow and tasks
     * A deployment is used to run the script every 5 minutes. `prefect deployment create prefect-deploy.py`
     * To run the Prefect deployment, use `prefect deployment create prefect_deploy.py`
     * Note: To create the deployment, I had to change the code slightly compared to `exp-tracking.py` and `prefect_flow.py` as the argparse is not working (and also not useful) when the flow is scheduled.
