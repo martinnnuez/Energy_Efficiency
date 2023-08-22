@@ -6,7 +6,7 @@ With the increasing importance of addressing climate change and the rise in ener
 
 ## Objective
 
-The main goal of this project is to utilize Hugging Face's powerful Natural Language Processing (NLP) model to predict the "Heating Load" using different building attributes.
+The main goal of this project is to predict the "Heating Load" using different building attributes.
 
 **Note:** The dataset also includes another variable, "Cooling Load," which can be predicted from the provided features. However, our primary focus will be on predicting the "Heating Load" using Hugging Face's NLP model.
 
